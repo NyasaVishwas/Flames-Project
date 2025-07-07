@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    height: 8vh;
+    width: 100vw;
+    background-color: #FEFEFE;
+    box-shadow: 0px 2px 6px black;
+    align-content: center;
+}
+
+.navigation{
+    display: flex;
+    gap: 40px;
+}
+
+.nav{
+    display: flex;
+    gap: 40px;
+}
+
+.logo{
+    display: flex;
+    gap: 10px;
+}
+
+.login{
+    position: relative;
+    left: 900px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 45vw 45vw;
+    grid-template-rows: 50vh;
+    justify-items: center;
+}
+
+.mainText{
+    padding-left: 100px;
+    padding-top: 100px;
+}
+
+.mainText h1{
+    font-size: 50px;
+    font-family: Manrope;
+    font-weight: 900;
+    line-height: 1.1; 
+}
+
+.mainText p{
+    font-family: Manrope;
+    opacity: 0.7;
+}
+
+.mainText button{
+    padding: 5px 10px;
+    border-radius: 20px;
+    height: 35px;
+    width: 120px;
+    margin-top: 20px;
+
+}
+
+.btn1{
+    background-color: #0050A6;
+    color: white;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.btn2{
+    border-color: #0050A6;
+    color: #0050A6;
+    background-color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.image img{
+    height: 300px;
+    width: 500px;
+    border-radius: 10px;
+    margin-left: 300px;
+}
