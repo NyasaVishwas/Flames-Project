@@ -33,7 +33,7 @@ header{
     left: 900px;
 }
 
-main{
+.main{
     display: grid;
     grid-template-columns: 45vw 45vw;
     grid-template-rows: 50vh;
@@ -95,4 +95,112 @@ main{
     width: 500px;
     border-radius: 10px;
     margin-left: 300px;
+}
+
+.boxes{
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw;
+    grid-template-rows: 26vh 26vh;
+    justify-content: center;
+    align-content: center;
+    gap: 30px;
+    height: 70vh;
+}
+
+.box{
+    border: 1px solid #989997;
+    border-radius: 8px;
+    align-content: center;
+    justify-items: center;
+}
+
+.features{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding-top: 160px;
+    padding-bottom: 20px;
+    font-size: 40px;
+}
+
+.icon{
+    height: 50px;
+    width: 50px;
+    background-color:#E5F2FF;
+    border-radius: 30px;
+    text-align: center;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+.icon i{
+    color: #007BFF;
+    font-size: 20px;
+}
+
+.heading{
+    margin-bottom: 15px;
+}
+
+.textitem{
+    padding: 0px 15px;
+    text-align: center;
+    color: #989997;
+}
+
+.wheading{
+    text-align: center;
+    font-size: 40px;
+}
+
+.work{
+    display: grid;
+    grid-template-columns: 20vw 5vw 20vw 5vw 20vw;
+    grid-template-rows: 50vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+.first{
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+
+}
+
+.num{
+    border: 2px solid black;
+    height: 55px;
+    width: 35px;
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #007BFF;
+    border: none;
+    align-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.first i{
+    font-size: 40px;
+    color: #007BFF;
+}
+
+.first p{
+    color: #939392;
+    text-align: center;
+}
+
+.arrow1{
+    font-size: 40px;
+    color: #939392;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 26vw 26vw 26vw;
+    grid-template-rows: 35vh;
 }
