@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvalAI - AI-Based Subjective Exam Evaluation System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ===== NAVIGATION BAR ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">EvalAI</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#upload">Upload</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Evaluate Subjective Answers Instantly with AI</h1>
+            <p>AI-powered feedback and grading for essays, theory, and handwritten answers.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="getStartedBtn">Get Started</button>
+                <button class="btn btn-secondary" id="watchDemoBtn">Watch Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES SECTION ===== -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Upload Questions</h3>
+                    <p>Easily upload exam questions and answer keys. Support for multiple formats including text, images, and PDFs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🎓</div>
+                    <h3>Student Submissions</h3>
+                    <p>Students can submit their answers digitally. Handwritten answers are automatically converted using OCR technology.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Evaluation</h3>
+                    <p>Advanced AI algorithms analyze and grade subjective answers with high accuracy and detailed feedback.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👩‍🏫</div>
+                    <h3>Teacher Review</h3>
+                    <p>Teachers can review AI evaluations, make adjustments, and provide additional feedback before finalizing grades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS SECTION ===== -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How EvalAI Works</h2>
+            <div class="workflow-container">
+                <div class="workflow-step">
+                    <div class="workflow-icon">📤</div>
+                    <h3>Upload</h3>
+                    <p>Upload exam questions and answer keys in multiple formats</p>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="workflow-icon">🤖</div>
+                    <h3>AI Evaluates</h3>
+                    <p>Our advanced AI analyzes and grades student responses</p>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="workflow-icon">📊</div>
+                    <h3>Results</h3>
+                    <p>Get detailed feedback, grades, and analytics instantly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS SECTION ===== -->
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title">Trusted by Educators Worldwide</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Teachers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label">Students</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2M+</div>
+                    <div class="stat-label">Papers Graded</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Accuracy Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REVIEWS SECTION ===== -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="reviews-carousel">
+                <div class="reviews-track">
+                    <div class="review-card">
+                        <div class="review-text">
+                            EvalAI has revolutionized how I grade essays. It saves me hours while providing detailed feedback that helps my students improve.
+                        </div>
+                        <div class="review-author">
+                            <div class="review-avatar">SM</div>
+                            <div class="review-info">
+                                <h4>Sarah Mitchell</h4>
+                                <p>English Teacher</p>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-text">
+                            The AI evaluation is incredibly accurate. I can now focus on teaching rather than spending endless hours grading papers.
+                        </div>
+                        <div class="review-author">
+                            <div class="review-avatar">JD</div>
+                            <div class="review-info">
+                                <h4>James Davis</h4>
+                                <p>History Professor</p>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-text">
+                            My students love the instant feedback feature. It helps them understand their mistakes and learn more effectively.
+                        </div>
+                        <div class="review-author">
+                            <div class="review-avatar">MR</div>
+                            <div class="review-info">
+                                <h4>Maria Rodriguez</h4>
+                                <p>Science Teacher</p>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-text">
+                            EvalAI's handwriting recognition is impressive. Even my messiest student submissions are accurately processed.
+                        </div>
+                        <div class="review-author">
+                            <div class="review-avatar">AL</div>
+                            <div class="review-info">
+                                <h4>Alex Thompson</h4>
+                                <p>Mathematics Teacher</p>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-text">
+                            The detailed analytics help me identify learning gaps in my classroom. It's transformed my teaching approach completely.
+                        </div>
+                        <div class="review-author">
+                            <div class="review-avatar">LW</div>
+                            <div class="review-info">
+                                <h4>Lisa Wang</h4>
+                                <p>Literature Professor</p>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate reviews for seamless loop -->
+                    <div class="review-card">
+                        <div class="review-text">
+                            EvalAI has revolutionized how I grade essays. It saves me hours while providing detailed feedback that helps my students improve.
+                        </div>
+                        <div class="review-author">
+                            <div class="review-avatar">SM</div>
+                            <div class="review-info">
+                                <h4>Sarah Mitchell</h4>
+                                <p>English Teacher</p>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-text">
+                            The AI evaluation is incredibly accurate. I can now focus on teaching rather than spending endless hours grading papers.
+                        </div>
+                        <div class="review-author">
+                            <div class="review-avatar">JD</div>
+                            <div class="review-info">
+                                <h4>James Davis</h4>
+                                <p>History Professor</p>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MODAL FOR DEMO ===== -->
+    <div class="modal" id="demoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">EvalAI Demo</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="demo-placeholder">
+                <p>🎥 Demo Video Placeholder<br>Watch how EvalAI transforms exam evaluation</p>
+            </div>
+            <p>Experience the future of automated grading with our AI-powered evaluation system. See how teachers save time while providing better feedback to students.</p>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>EvalAI</h3>
+                    <p>Revolutionizing education through AI-powered exam evaluation. Making grading faster, more accurate, and more insightful for educators worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                        <a href="#" title="Instagram">📷</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#upload">Upload</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#status">System Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#security">Security</a></li>
+                        <li><a href="#compliance">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 EvalAI. All Rights Reserved. | Empowering Education Through AI</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>   
+</body>
+</html>
