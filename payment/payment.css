@@ -1,137 +1,142 @@
 :root {
   --primary: #6a5af9;
-  --bg: #f5f7fa;
-  --white: #ffffff;
+  --accent: #8e2de2;
   --text: #333;
-  --accent: #e9e7fd;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --white: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.2);
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Inter', sans-serif;
-  background: var(--bg);
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-}
-
-.wrapper {
-  width: 100%;
-  max-width: 450px;
-  padding: 20px;
+  min-height: 100vh;
+  color: var(--text);
 }
 
 .glass-card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 10px;
   padding: 40px 30px;
+  width: 95%;
+  max-width: 420px;
+  box-shadow: var(--shadow);
   text-align: center;
-  animation: fadeInUp 0.8s ease forwards;
+  animation: fadeIn 0.6s ease;
+  position: relative;
 }
 
 .brand-strip {
-  height: 6px;
-  background: linear-gradient(to right, #8ec5fc, #e0c3fc);
-  border-radius: 6px 6px 0 0;
-  margin: -40px -30px 30px;
+  height: 8px;
+  width: 100%;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .brand-logo {
-  height: 50px;
-  margin-bottom: 15px;
+  height: 60px;
+  margin: 0 auto 20px;
+  display: block;
 }
 
 h1 {
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 5px;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: var(--primary);
 }
 
 .subheading {
   font-size: 0.95rem;
-  color: #666;
+  color: #555;
   margin-bottom: 25px;
 }
 
 .price {
   font-size: 2.4rem;
-  color: var(--primary);
   font-weight: 700;
-  margin-bottom: 15px;
+  color: var(--primary);
+  margin-bottom: 10px;
 }
 
-.price .small {
+.price small {
   display: block;
   font-size: 0.9rem;
-  color: #888;
-  font-weight: 400;
+  color: #666;
 }
 
 .features {
   list-style: none;
-  text-align: left;
-  margin: 25px 0;
   padding: 0;
+  margin: 25px 0;
+  text-align: left;
 }
 
 .features li {
-  font-size: 0.95rem;
   padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  color: #444;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(94, 94, 94, 0.411);
+  color: #3333339a;
 }
 
 .pay-btn {
-  background: var(--primary);
+  background: linear-gradient(to right, var(--primary), var(--accent));
   color: white;
   font-size: 1rem;
   font-weight: 600;
-  padding: 14px 20px;
-  width: 100%;
   border: none;
+  padding: 15px 20px;
+  width: 100%;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(106, 90, 249, 0.3);
+  box-shadow: 0 8px 20px rgba(106, 90, 249, 0.3);
   transition: all 0.3s ease;
 }
 
 .pay-btn:hover {
-  background: #5849e0;
-  box-shadow: 0 6px 18px rgba(106, 90, 249, 0.4);
-}
-
-.secure-note {
-  font-size: 0.85rem;
-  color: #888;
-  margin-top: 20px;
-}
-
-.microcopy {
-  font-size: 0.8rem;
-  color: #aaa;
-  margin-top: 5px;
+  background: linear-gradient(to right, #5849e0, #662ce2);
+  transform: translateY(-2px);
 }
 
 .status-message {
   margin-top: 15px;
-  font-size: 0.9rem;
   color: green;
   font-weight: 600;
+  font-size: 0.9rem;
 }
 
-@keyframes fadeInUp {
+.trust {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.microcopy {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 8px;
+}
+
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
-  to
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
