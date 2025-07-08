@@ -1,43 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EvalAI – Secure Payment</title>
-  <link rel="stylesheet" href="payment.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EvalAI Pro - Upgrade</title>
+  <link rel="stylesheet" href="payment.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
   <div class="glass-card">
     <div class="brand-strip"></div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Education_flatline.svg" alt="EvalAI Logo" class="brand-logo" />
-
+    <img src="https://yourdomain.com/logo.svg" alt="EvalAI Logo" class="brand-logo">
     <h1>Upgrade to <span class="highlight">EvalAI Pro</span></h1>
     <p class="subheading">Smarter grading. Faster feedback. Less stress.</p>
-
     <div class="price">
-      <span>₹99</span>
-      <small>/ 10 AI Evaluations</small>
+      ₹99
+      <small>for 10 AI Evaluations</small>
     </div>
-
     <ul class="features">
-      <li>📄 Upload Questions & Model Answers</li>
-      <li>🤖 Detailed AI Evaluation with Feedback</li>
-      <li>📝 Handwriting OCR Support</li>
-      <li>📊 Exportable Grade Reports</li>
+      <li><span class="icon">📄</span> Upload Questions & Model Answers</li>
+      <li><span class="icon">🤖</span> Detailed AI Evaluation with Feedback</li>
+      <li><span class="icon">📝</span> Handwriting OCR Support</li>
+      <li><span class="icon">📊</span> Exportable Grade Reports</li>
     </ul>
-
     <button id="payNowBtn" class="pay-btn">Pay Securely with Razorpay</button>
-    <div id="payment-status" class="status-message"></div>
-
-    <div class="trust">
-      🔒 SSL Secured • Powered by Razorpay<br />
-    </div>
-
+    <p id="payment-status" class="status-message"></p>
+    <p class="trust">🔒 SSL Secured • Powered by Razorpay</p>
     <p class="microcopy">We never store your card details.</p>
   </div>
-
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="payment.js"></script>
 </body>
 </html>
