@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <style>
+    body {
+  background: url('body.png') center/cover no-repeat;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-image 0.5s ease-in-out;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      background: #e9e9e9;
+      border-radius: 8px;
+      margin: 0 5px;
+      transition: background 0.3s;
+    }
+
+    .tab.active {
+      background: #007bff;
+      color: white;
+    }
+
+    .form {
+      display: none;
+    }
+
+    .form.active {
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('student')">Student</div>
+      <div class="tab" onclick="switchTab('admin')">Teacher</div>
+    </div>
+
+    <!-- Student Login -->
+    <form id="student" class="form active" action="index.html" method="GET">
+      <input type="text" placeholder="Student ID" required />
+      <input type="password" placeholder="Password" required />
+      <input type="email" placeholder="Email ID" required />
+      <button type="submit">Login as Student</button>
+    </form>
+
+    <!-- Admin Login -->
+    <form id="admin" class="form" action="index.html" method="GET">
+      <input type="text" placeholder="Admin Username" required />
+      <input type="password" placeholder="Password" required />
+      <input type="email" placeholder="Email ID" required />
+      <button type="submit">Login as Admin</button>
+    </form>
+    <p style="text-align: center; margin-top: 10px;">
+  Create an Account <a href="signup.html">Sign up</a>
+</p>
+  </div>
+
+  <script>
+  function switchTab(role) {
+  const tabs = document.querySelectorAll('.tab');
+  const forms = document.querySelectorAll('.form');
+
+  tabs.forEach(tab => tab.classList.remove('active'));
+  forms.forEach(form => form.classList.remove('active'));
+
+  document.querySelector(`.tab[onclick*="${role}"]`).classList.add('active');
+  document.getElementById(role).classList.add('active');
+
+  // Change background image based on role
+  if (role === 'student') {
+    document.body.style.backgroundImage =
+      "url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1920&q=80')";
+  } else if (role === 'admin') {
+    document.body.style.backgroundImage =
+      "url('teacher.avif')";
+  }
+}
+
+  </script>
+</body>
+</html>
