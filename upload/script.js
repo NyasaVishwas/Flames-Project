@@ -1,87 +1,116 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const pageContent = document.getElementById('page-content');
-    const pageTitle = document.getElementById('page-title');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const form = document.getElementById('evaluation-form');
+    const submitBtn = form.querySelector('.submit-btn');
 
-    const pages = {
-        
-        upload: `
-            <div class="card">
-                <h3>Upload Documents</h3>
-                <form>
-                    <div class="form-group">
-                        <label for="question-paper">Question Paper</label>
-                        <input type="file" id="question-paper" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="model-answer">Model Answer</label>
-                        <input type="file" id="model-answer" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="rubric">Evaluation Rubric</label>
-                        <textarea id="rubric" rows="6" class="form-control" placeholder="Enter the evaluation rubric here..."></textarea>
-                    </div>
-                    <button type="submit" class="btn">Submit for Evaluation</button>
-                </form>
-            </div>
-        `,
-        evaluation: `
-            <div class="card">
-                <h3>Evaluation Details</h3>
-                <div class="evaluation-grid">
-                    <div>
-                        <h4>Student's Answer</h4>
-                        <p>Select an evaluation to see the student's answer.</p>
-                    </div>
-                    <div>
-                        <h4>Model Answer</h4>
-                        <p>Select an evaluation to see the model answer.</p>
-                    </div>
-                </div>
-                <div class="card mt-4">
-                    <h4>AI Feedback (Editable)</h4>
-                    <div class="feedback-score">--/100</div>
-                    <div class="form-group mt-2">
-                        <label for="whats-missing">What's Missing:</label>
-                        <textarea id="whats-missing" rows="3" class="form-control" placeholder="AI feedback on what's missing will appear here..."></textarea>
-                    </div>
-                    <div class="form-group mt-2">
-                        <label for="suggestions">Suggestions for Improvement:</label>
-                        <textarea id="suggestions" rows="3" class="form-control" placeholder="AI suggestions for improvement will appear here..."></textarea>
-                    </div>
-                </div>
-                <div class="card mt-4">
-                    <h4>Override Grade</h4>
-                    <div class="form-group">
-                        <label for="override-score">New Score</label>
-                        <input type="number" id="override-score" class="form-control" placeholder="Enter new score">
-                    </div>
-                    <button class="btn">Update Score & Feedback</button>
-                </div>
-            </div>
-        `
-    };
+    const fileInputs = [
+        {
+            section: document.getElementById('question-paper-section'),
+            input: document.getElementById('question-paper-input'),
+            file: null
+        },
+        {
+            section: document.getElementById('model-answer-section'),
+            input: document.getElementById('model-answer-input'),
+            file: null
+        }
+    ];
 
-    function loadPage(page) {
-        pageContent.innerHTML = pages[page];
-        pageTitle.textContent = page.charAt(0).toUpperCase() + page.slice(1);
+    fileInputs.forEach(item => {
+        const label = item.section.querySelector('.file-label');
+        const display = item.section.querySelector('.file-info-display');
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.dataset.page === page) {
-                link.classList.add('active');
+        // The `for` attribute on the label handles the click.
+        // The `change` event on the input handles the file selection.
+        // No extra JS is needed for the click to work.
+
+        // Handle drag and drop
+        label.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            label.classList.add('dragover');
+        });
+
+        label.addEventListener('dragleave', () => {
+            label.classList.remove('dragover');
+        });
+
+        label.addEventListener('drop', (e) => {
+            e.preventDefault();
+            label.classList.remove('dragover');
+            const droppedFiles = e.dataTransfer.files;
+            if (droppedFiles.length > 0) {
+                item.input.files = droppedFiles;
+                // Manually trigger the change event so our handler below catches it
+                const changeEvent = new Event('change', { bubbles: true });
+                item.input.dispatchEvent(changeEvent);
             }
         });
-    }
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const page = e.target.dataset.page;
-            loadPage(page);
+        // Handle file selection via input
+        item.input.addEventListener('change', (e) => {
+            const selectedFile = e.target.files[0];
+            if (selectedFile) {
+                handleFileChange(item, selectedFile);
+            }
+        });
+
+        // Handle file deletion
+        display.addEventListener('click', (e) => {
+            if (e.target.classList.contains('delete-btn')) {
+                item.file = null;
+                item.input.value = ''; // Clear the file input
+                display.style.display = 'none';
+                label.style.display = 'flex';
+                updateSubmitButtonState();
+            }
         });
     });
 
-    // Load the default page
-    loadPage('upload');
+    function handleFileChange(item, file) {
+        item.file = file;
+        const display = item.section.querySelector('.file-info-display');
+        const label = item.section.querySelector('.file-label');
+
+        display.innerHTML = `
+            <i class='bx bxs-file-check'></i>
+            <span>${file.name}</span>
+            <i class='bx bxs-trash-alt delete-btn'></i>
+        `;
+        display.style.display = 'flex';
+        label.style.display = 'none';
+        updateSubmitButtonState();
+    }
+
+    function updateSubmitButtonState() {
+        const allFilesUploaded = fileInputs.every(item => item.file !== null);
+        submitBtn.disabled = !allFilesUploaded;
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!submitBtn.disabled) {
+            submitBtn.textContent = 'Processing...';
+            submitBtn.disabled = true;
+
+            // Simulate processing delay
+            setTimeout(() => {
+                alert('Evaluation submitted successfully!');
+                // Here you would typically send data to a server
+                // For now, we'll just reset the form
+                form.reset();
+                fileInputs.forEach(item => {
+                    const display = item.section.querySelector('.file-info-display');
+                    const label = item.section.querySelector('.file-label');
+                    item.file = null;
+                    item.input.value = '';
+                    display.style.display = 'none';
+                    label.style.display = 'flex';
+                });
+                submitBtn.textContent = 'Submit for Evaluation';
+                updateSubmitButtonState();
+            }, 2000);
+        }
+    });
+
+    // Initial state
+    updateSubmitButtonState();
 });
