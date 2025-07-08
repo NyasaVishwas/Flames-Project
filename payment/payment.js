@@ -1,40 +1,43 @@
-document.getElementById("payNowBtn").onclick = function () {
-  const payBtn = document.getElementById("payNowBtn");
-  payBtn.disabled = true;
-  payBtn.innerText = "Processing...";
-  
-  const options = {
-    key: "rzp_test_YourApiKeyHere", // Replace with your Razorpay Test Key
-    amount: 9900, // ₹99 in paise
-    currency: "INR",
-    name: "EvalAI",
-    description: "10 Evaluation Credits",
-    image: "https://yourdomain.com/logo.svg",
-    handler: function (response) {
-      const status = document.getElementById("payment-status");
-      status.innerText = "✅ Payment successful! Redirecting...";
-      status.style.opacity = 1;
-      
-      localStorage.setItem("paid", "true");
-      setTimeout(() => {
-        window.location.href = "upload.html";
-      }, 2000);
-    },
-    prefill: {
-      name: "Nyasa Vishwas",
-      email: "nyasa@example.com",
-    },
-    theme: {
-      color: "#5b4cf8",
-    },
-    modal: {
-      ondismiss: function () {
-        payBtn.disabled = false;
-        payBtn.innerText = "Pay Securely with Razorpay";
-      }
+document.querySelectorAll('.pay-btn').forEach(btn => {
+  btn.addEventListener('click', function () {
+    const plan = this.getAttribute('data-plan');
+    if (plan === 'enterprise') {
+      window.location.href = 'mailto:sales@evalai.com?subject=Enterprise Plan Inquiry';
+      return;
     }
-  };
 
-  const rzp = new Razorpay(options);
-  rzp.open();
-};
+    this.disabled = true;
+    this.innerText = 'Processing...';
+
+    const options = {
+      key: "YOUR_RAZORPAY_KEY_ID",
+      amount: plan === "pro" ? 49900 : 149900, // in paise
+      currency: "INR",
+      name: "EvalAI",
+      description: `Subscription: ${plan.charAt(0).toUpperCase() + plan.slice(1)}`,
+      image: "https://yourdomain.com/logo.svg",
+      handler: function (response) {
+        alert(`Payment successful for ${plan.charAt(0).toUpperCase() + plan.slice(1)} plan! Payment ID: ${response.razorpay_payment_id}`);
+        btn.disabled = false;
+        btn.innerText = plan === 'pro' ? 'Upgrade to Pro' : 'Contact Sales';
+        // Call your backend here to activate subscription
+      },
+      prefill: {
+        name: "",
+        email: "",
+      },
+      theme: {
+        color: "#2e2a8a",
+      },
+      modal: {
+        ondismiss: function () {
+          btn.disabled = false;
+          btn.innerText = plan === 'pro' ? 'Upgrade to Pro' : 'Contact Sales';
+        }
+      }
+    };
+
+    const rzp = new Razorpay(options);
+    rzp.open();
+  });
+});

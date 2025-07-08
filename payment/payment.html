@@ -3,30 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EvalAI Pro - Upgrade</title>
+  <title>EvalAI - Choose Your Plan</title>
   <link rel="stylesheet" href="payment.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="glass-card">
-    <div class="brand-strip"></div>
-    <img src="https://yourdomain.com/logo.svg" alt="EvalAI Logo" class="brand-logo">
-    <h1>Upgrade to <span class="highlight">EvalAI Pro</span></h1>
-    <p class="subheading">Smarter grading. Faster feedback. Less stress.</p>
-    <div class="price">
-      ₹99
-      <small>for 10 AI Evaluations</small>
+  <div class="hero">
+    <div class="container">
+      <h1 class="title">Choose Your <span class="highlight">EvalAI</span> Plan</h1>
+      <p class="subtitle">Unlock AI-Powered Essay Evaluation for Modern Educators</p>
+      <div class="plans">
+        <div class="plan-card">
+          <h2>Starter</h2>
+          <div class="price">Free</div>
+          <ul class="features">
+            <li><span class="icon">👤</span> 1 Educator</li>
+            <li><span class="icon">📝</span> 20 Evaluations / month</li>
+            <li><span class="icon">🤖</span> Basic AI Scoring</li>
+          </ul>
+          <button class="btn current-plan" disabled>Current Plan</button>
+        </div>
+        <div class="plan-card popular">
+          <div class="popular-badge">Recommended</div>
+          <h2>Pro</h2>
+          <div class="price">₹99<span>/mo</span></div>
+          <ul class="features">
+            <li><span class="icon">👥</span> Up to 5 Educators</li>
+            <li><span class="icon">📝</span> 500 Evaluations / month</li>
+            <li><span class="icon">📊</span> Detailed AI Feedback</li>
+            <li><span class="icon">📈</span> Student Progress Reports</li>
+          </ul>
+          <button class="btn pay-btn" data-plan="pro">Upgrade to Pro</button>
+        </div>
+        <div class="plan-card">
+          <h2>Enterprise</h2>
+          <div class="price">₹499<span>/mo</span></div>
+          <ul class="features">
+            <li><span class="icon">👥</span> Unlimited Educators</li>
+            <li><span class="icon">📝</span> Unlimited Evaluations</li>
+            <li><span class="icon">🛠️</span> Custom Rubric Builder</li>
+            <li><span class="icon">📞</span> Priority Support</li>
+          </ul>
+          <button class="btn pay-btn" data-plan="enterprise">Contact Sales</button>
+        </div>
+      </div>
+      <p class="trust">🔒 100% Secure Payments Powered by Razorpay</p>
     </div>
-    <ul class="features">
-      <li><span class="icon">📄</span> Upload Questions & Model Answers</li>
-      <li><span class="icon">🤖</span> Detailed AI Evaluation with Feedback</li>
-      <li><span class="icon">📝</span> Handwriting OCR Support</li>
-      <li><span class="icon">📊</span> Exportable Grade Reports</li>
-    </ul>
-    <button id="payNowBtn" class="pay-btn">Pay Securely with Razorpay</button>
-    <p id="payment-status" class="status-message"></p>
-    <p class="trust">🔒 SSL Secured • Powered by Razorpay</p>
-    <p class="microcopy">We never store your card details.</p>
   </div>
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="payment.js"></script>
