@@ -1,0 +1,137 @@
+:root {
+  --primary: #6a5af9;
+  --bg: #f5f7fa;
+  --white: #ffffff;
+  --text: #333;
+  --accent: #e9e7fd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+}
+
+.glass-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.brand-strip {
+  height: 6px;
+  background: linear-gradient(to right, #8ec5fc, #e0c3fc);
+  border-radius: 6px 6px 0 0;
+  margin: -40px -30px 30px;
+}
+
+.brand-logo {
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+.subheading {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.price {
+  font-size: 2.4rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.price .small {
+  display: block;
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 400;
+}
+
+.features {
+  list-style: none;
+  text-align: left;
+  margin: 25px 0;
+  padding: 0;
+}
+
+.features li {
+  font-size: 0.95rem;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+.pay-btn {
+  background: var(--primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(106, 90, 249, 0.3);
+  transition: all 0.3s ease;
+}
+
+.pay-btn:hover {
+  background: #5849e0;
+  box-shadow: 0 6px 18px rgba(106, 90, 249, 0.4);
+}
+
+.secure-note {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 20px;
+}
+
+.microcopy {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.status-message {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: green;
+  font-weight: 600;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to
